@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>Feliz.Graph_Toolkit</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <WarnOn>3390;$(WarnOn)</WarnOn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Providers.fs" />
+    <Compile Include="Msal2Provider.fs" />
+    <Compile Include="ProxyProvider.fs" />
+    <Compile Include="Types.fs" />
+    <Compile Include="Interop.fs" />
+    <Compile Include="Login.fs" />
+    <Compile Include="People.fs" />
+    <Compile Include="Graph.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fable.Core" Version="3.7.1" />
+    <PackageReference Include="Feliz" Version="1.64.0" />
+  </ItemGroup>
+    
+    <ItemGroup>
+        <Content Include="*.fsproj; *.fs; *.js;" Exclude="**\*.fs.js" PackagePath="fable\" />
+    </ItemGroup>
+    <PropertyGroup>
+        <NpmDependencies>
+            <NpmPackage Name="@microsoft/mgt-react" Version="gte 2.5.2" />
+            <NpmPackage Name="@microsoft/mgt-proxy-provider" Version="gte 2.5.2" />
+            <NpmPackage Name="@microsoft/mgt-msal2-provider" Version="gte 2.5.2" />
+        </NpmDependencies>
+    </PropertyGroup>
+</Project>
